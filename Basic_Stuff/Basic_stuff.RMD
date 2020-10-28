@@ -1,0 +1,65 @@
+---
+title: "Basic Knowledge"
+subtitle: "My understanding from Rcookbook" 
+author: "Vadivel"
+date: "10/28/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Print vs Cat 
+* *Print* cant handle multiple datat types  whereas *Cat* can
+* *Print* can hanle list whereas *Cat* can
+
+
+```{r}
+#print("The zero occurs at", 2 * pi, "radians.")
+#Error in print.default("The zero occurs at", 2 * pi, "radians.") : invalid #'quote' argument
+```
+
+
+```{r}
+cat("The zero occurs at", 2 * pi, "radians.")
+
+```
+
+
+```{r}
+fib <- c(0, 1, 1, 2, 3, 5, 8, 13, 21, 34)
+cat("The first few Fibonacci numbers are:", fib, "...\n")
+
+```
+
+
+```{r}
+#cat(list("a", "b", "c"))
+#Error in cat(list("a", "b", "c")) : 
+#  argument 1 (type 'list') cannot be handled by 'cat'
+
+```
+
+```{r}
+print(list("a","b","c"))
+```
+
+* There is no need to declare or explicitly create variables in R. Just assign a value to the name and R will create the variable:
+
+
+```{r}
+x <- 3
+y <- 4
+z <- sqrt(x^2 + y^2)
+print(z)
+```
+
+* ls will provide list all the variable in the environment
+* ls.str will provide summary of all variable that listed in the environment
+
+```{r}
+
+ls()
+ls.str()
+```
